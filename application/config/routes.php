@@ -67,3 +67,4 @@ $route['proposal_work']   = 'construction/proposal_work';
 $route['add_scopework']   = 'construction/add_scopework';
 $route['add_day']         = 'construction/add_day';
 $route['evaluation']         = 'construction/evaluation';
+$route['evaluation_list']         = 'construction/evaluation_list';

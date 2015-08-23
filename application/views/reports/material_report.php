@@ -22,7 +22,7 @@
       <?php $this->load->view('reports/list_project') ?>
     </div>
     <div id="menu4" class="tab-pane fade">
-
+<?php $this->load->view('reports/evaluation_list') ?>
     </div>
     <div id="menu5" class="tab-pane fade">
       <?php $this->load->view('reports/userlog') ?>
