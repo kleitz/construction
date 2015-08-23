@@ -21,7 +21,7 @@
             <a href="/report">Reports</a>
         </li>
         <li>
-            <a href="/unused_material">Unused material</a>
+            <a href="/add_scopework">Add Scope of Work</a>
         </li>
         <li>
             <a href="/logout">Logout</a>

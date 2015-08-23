@@ -64,3 +64,4 @@ $route['payroll']         = 'construction/payroll';
 $route['report']          = 'construction/reports';
 $route['unused_material'] = 'supply/unused_material';
 $route['proposal_work'] = 'Construction/proposal_work';
+$route['add_scopework'] = 'Construction/add_scopework';

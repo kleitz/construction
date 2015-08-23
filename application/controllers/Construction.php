@@ -42,4 +42,13 @@
         $this->load->view('template/footer.php');
       }
 
+      function add_scopework()
+      {
+        $this->load->view('template/header');
+        $this->load->view('template/navigation2');
+        $this->load->view('reports/add_scopework');
+        $this->load->view('template/footer.php');
+      }
+
+
   }
