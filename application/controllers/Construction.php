@@ -49,6 +49,20 @@
         $this->load->view('reports/add_scopework');
         $this->load->view('template/footer.php');
       }
+      function add_day()
+      {
+        $this->load->view('template/header');
+        $this->load->view('template/navigation2');
+        $this->load->view('reports/man_project_report');
+        $this->load->view('template/footer.php');
+      }
+      function evaluation()
+      {
+        $this->load->view('template/header');
+        $this->load->view('template/navigation2');
+        $this->load->view('reports/evaluation');
+        $this->load->view('template/footer.php');
+      }
 
 
   }

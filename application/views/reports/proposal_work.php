@@ -1,5 +1,5 @@
 <div class="panel panel-default" style="margin:10px;box-shadow:0px 0px 20px gray;margin-top:20px">
-  <div class="panel-heading"><strong><h2>Add Material to Proposed Construction</h2></strong></div>
+  <div class="panel-heading"><strong><h2>Estimated ost of Proposed Worked</h2></strong></div>
   <div class="panel-body">
     <div class="col-md-12">
       <?php echo $this->session->flashdata('message'); ?>

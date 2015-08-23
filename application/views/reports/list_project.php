@@ -16,10 +16,9 @@
            <tr>
              <td class="bordered">Construction of 2 Storey Classroom School Building</td>
              <td class="bordered">
-               <a  class="a-table label label-info" href="/proposal_work">View Report&nbsp;&nbsp;<span class="glyphicon glyphicon-edit"></a>
+               <a  class="a-table label label-info" href="/evaluation">Evaluation&nbsp;&nbsp;<span class="glyphicon glyphicon-edit"></a>
               </td>
            </tr>
-
        </tbody>
       </table>
 
