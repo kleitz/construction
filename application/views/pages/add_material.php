@@ -2,15 +2,12 @@
   <div class="panel-heading"><strong><h2>Add details to Proposed Construction</h2></strong></div>
   <div class="panel-body">
     <div class="col-md-12">
-      <?php echo $this->session->flashdata('message'); ?>
-      <form class="form-horizontal" action="/insert_add_material" method="post">
-        <!-- <div class="form-group">
-            <label for="" class="col-sm-2 control-label">Item No.</label>
-            <div class="col-sm-6">
-              <input type="text" name="name" value="" class="form-control">
-            </div>
+      <?php
+      echo $this->session->flashdata('message');
+      $fs = $id;
+      ?>
 
-        </div> -->
+      <form class="form-horizontal" action="/insert_add_material" method="post">
         <input type="hidden" name="hidden_id" value="<?php echo  $id;?>">
         <div class="form-group">
             <label class="col-sm-2 control-label">Scope of Work</label>
@@ -67,7 +64,7 @@
               <div class="form-group">
             <label for="" class="col-sm-2 control-label">No of days to be Finished</label>
             <div class="col-sm-6">
-              <input type="number" name="days" value="" class="form-control">
+              <input type="number" name="days" value="<?php echo $id ?>" class="form-control">
             </div>
 
         </div>
@@ -89,7 +86,6 @@
          <th  class="table_color">Scope Of Work</th>
          <th class="table_color">Description</th>
          <th class="table_color">Unit</th>
-         <th class="table_color">Days</th>
          <th class="table_color">Qty</th>
          <th class="table_color">Unit Cost</th>
          <th class="table_color">Total</th>
@@ -97,26 +93,45 @@
        </tr>
 
 
-           <tr>
-             <td class="bordered" colspan="6"><b>Excavation</b></td>
-           </tr>
+       <?php
+          foreach ($this->common->get_scopes($fs) as $k):
+        ?>
+         <tr>
+             <td class="bordered" colspan="6"><b><?php echo $k['sc'] ?></b></td>
+         </tr>
+         <?php foreach ($this->common->get_type($k['scope_of_work'], $fs) as $key => $value): ?>
            <tr>
              <td></td>
-             <td colspan="5"><b>Materials</b></td>
+             <?php if ($value['type'] == 1): ?>
+               <td colspan="5"><b>Materials</b></td>
+             <?php elseif ($value['type'] == 2): ?>
+               <td colspan="5"><b>Equiment</b></td>
+             <?php elseif ($value['type'] == 3): ?>
+               <td colspan="5"><b>Laborers</b></td>
+             <?php endif; ?>
            </tr>
-           <tr>
-             <td></td>
-             <td>Coco Lumber</td>
-             <td>bd. ft</td>
-             <td></td>
-             <td>400</td>
-             <td>15</td>
-             <td>6,000.00</td>
-             <td>
-               <a  class="a-table label label-info" href="#">Edit&nbsp;&nbsp;<span class="glyphicon glyphicon-edit"></a>
-                <a  class="a-table label label-danger" href="#">Delete&nbsp;&nbsp;<span class="glyphicon glyphicon-trash"></a>
-             </td>
-           </tr>
+           <?php foreach ($this->common->get_all_mat($value['type'], $fs) as $key => $value): ?>
+             <tr>
+                <td></td>
+                <td>Coco Lumber</td>
+                <td>bd. ft</td>
+                <td></td>
+                <td>400</td>
+                <td>15</td>
+                <td>6,000.00</td>
+                <td>
+                  <a  class="a-table label label-info" href="#">Edit&nbsp;&nbsp;<span class="glyphicon glyphicon-edit"></a>
+                   <a  class="a-table label label-danger" href="#">Delete&nbsp;&nbsp;<span class="glyphicon glyphicon-trash"></a>
+                </td>
+              </tr>
+
+           <?php endforeach; ?>
+         <?php endforeach; ?>
+       <?php endforeach; ?>
+
+
+
+
            <tr>
              <td></td>
              <td>6mm Thick Ordinary Plywood</td>

@@ -76,6 +76,27 @@ class Common extends CI_Model
     $x = $this->db->get('project')->row_array();
     return $x['files'];
   }
+  function get_scopes($id)
+  {
+    return $this->db->query("SELECT a.scope_of_work, b.scopework sc FROM material a, scopework b
+                              WHERE a.project = '$id' AND a.scope_of_work = b.id
+                              GROUP BY a.scope_of_work")->result_array();
+  }
+  function get_type($scopeofwork, $id)
+  {
+    return $this->db->query("SELECT type FROM material
+                            WHERE scope_of_work = '$scopeofwork'
+                            AND project = '$id'
+                            GROUP by type")->result_array();
+  }
+  function get_all_mat($type, $id, $scopework)
+  {
+    return $this->db->query("SELECT unit, description,unit_cost  FROM material
+                            WHERE type = '$type'
+                            AND project = '$id'
+                            And scope_of_work = '$scopeofwork'
+                            ")->result_array();
+  }
 }
 
 

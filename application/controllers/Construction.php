@@ -118,11 +118,13 @@
       {
         $data = array('scope_id'=>$this->input->post('hidden_id'),
                       'scope_of_work'=>$this->input->post('scopeofwork'),
-                      'description'=>$this->input->post('type'),
+                      'description'=>$this->input->post('description'),
                       'unit'=>$this->input->post('unit'),
                       'quantity'=>$this->input->post('quantity'),
                       'unit_cost'=>$this->input->post('unitcost'),
-                      'days'=>$this->input->post('days')
+                      'days'=>$this->input->post('days'),
+                      'project' => $this->input->post('hidden_id'),
+                      'type' => $this->input->post('type')
                       );
                       $this->common->insert_add_material($data);
                       $this->session->set_flashdata('message', $this->succesmessage() . 'Succesfully Added</div>');
