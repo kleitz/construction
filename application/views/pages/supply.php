@@ -68,7 +68,7 @@
          <th class="table_color">Quantity</th>
          <th class="table_color">Price</th>
          <th class="table_color">Total</th>
-         <th class="table_color">Date to Deliver</th>
+         <th class="table_color">DATE RECIEVE</th>
          <th class="table_color">Time</th>
          <th class="table_color">Action</th>
        </tr>

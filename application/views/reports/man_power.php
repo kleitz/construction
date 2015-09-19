@@ -20,7 +20,7 @@
              <td class="bordered">Project Engineer</td>
              <td class="bordered"><input type="date" class="form-control"name="name" value=""></td>
              <td class="bordered"><input type="date" class="form-control"name="name" value=""></td>
-             <td class="bordered">100</td>
+             <td class="bordered">7</td>
            </tr>
 
            <tr>
@@ -28,15 +28,15 @@
              <td class="bordered">Construction Foreman</td>
              <td class="bordered"><input type="date" class="form-control"name="name" value=""></td>
              <td class="bordered"><input type="date" class="form-control"name="name" value=""></td>
-             <td class="bordered">100</td>
+             <td class="bordered">7</td>
            </tr>
 
            <tr>
              <td>III</td>
-             <td class="bordered">Project Engineer</td>
+             <td class="bordered">Welder</td>
              <td class="bordered"><input type="date" class="form-control"name="name" value=""></td>
              <td class="bordered"><input type="date" class="form-control"name="name" value=""></td>
-             <td class="bordered">100</td>
+             <td class="bordered">7</td>
            </tr>
 
        </tbody>

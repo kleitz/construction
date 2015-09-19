@@ -28,7 +28,7 @@ class Login extends CI_Controller
               if ($this->session->userdata('username') != "") {
                 $this->load->view('template/header');
                 $this->load->view('template/navigation2');
-                $this->load->view('pages/supply');
+                $this->load->view('pages/projectsite');
                 $this->load->view('template/footer');
               }
               else{

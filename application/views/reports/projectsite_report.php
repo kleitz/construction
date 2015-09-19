@@ -13,12 +13,18 @@
 
      </thead>
        <tbody>
-           <tr>
-             <td class="bordered">Construction of 2 Storey Classroom School Building</td>
-             <td class="bordered">
-               <a  class="a-table label label-info" href="/proposal_work">View Report&nbsp;&nbsp;<span class="glyphicon glyphicon-edit"></a>
-              </td>
-           </tr>
+
+             <?php foreach ($this->common->select_project() as $key => $value):
+               extract ($value)?>
+                  <tr>
+               <td class="bordered"><?php echo $project_site ?></td>
+               <td class="bordered">
+                 <a  class="a-table label label-info" href="/proposal_work/<?php echo $id ?>">View Report&nbsp;&nbsp;<span class="glyphicon glyphicon-edit"></a>
+                </td>
+                   </tr>
+             <?php endforeach; ?>
+
+
 
        </tbody>
       </table>

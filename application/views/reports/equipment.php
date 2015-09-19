@@ -1,5 +1,5 @@
 <div class="panel panel-default" style="margin:10px;box-shadow:0px 0px 20px gray;margin-top:20px">
-  <div class="panel-heading"><strong><h2>Man Powers</h2></strong></div>
+  <div class="panel-heading"><strong><h2>Equipment utilazation</h2></strong></div>
   <div class="panel-body">
     <div class="table-responsive col-md-12">
       <table class="table table-bordered table-hover display" id="example" cellspacing="0" width="100%">
@@ -20,7 +20,7 @@
              <td class="bordered">Dump Truck</td>
              <td class="bordered"><input type="date" class="form-control"name="name" value=""></td>
              <td class="bordered"><input type="date" class="form-control"name="name" value=""></td>
-             <td class="bordered">100</td>
+             <td class="bordered">7</td>
            </tr>
 
            <tr>
@@ -28,7 +28,7 @@
              <td class="bordered">Concrete Mixer</td>
              <td class="bordered"><input type="date" class="form-control"name="name" value=""></td>
              <td class="bordered"><input type="date" class="form-control"name="name" value=""></td>
-             <td class="bordered">100</td>
+             <td class="bordered">7</td>
            </tr>
 
            <tr>
@@ -36,7 +36,7 @@
              <td class="bordered">Concrete Vibrator</td>
              <td class="bordered"><input type="date" class="form-control"name="name" value=""></td>
              <td class="bordered"><input type="date" class="form-control"name="name" value=""></td>
-             <td class="bordered">100</td>
+             <td class="bordered">10</td>
            </tr>
 
        </tbody>

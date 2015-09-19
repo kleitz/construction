@@ -8,15 +8,11 @@
         <li>
             <a href=""></a>
         </li>
-        <li>
-            <a href="/supply">Supply</a>
-        </li>
+
         <li>
             <a href="/project-site">Construction</a>
         </li>
-        <li>
-            <a href="/payroll">Payroll</a>
-        </li>
+
         <li>
             <a href="/report">Reports</a>
         </li>
@@ -25,6 +21,9 @@
         </li>
         <li>
             <a href="/logout">Logout</a>
+        </li>
+        <li>
+            <a href="/bago">Bag-o</a>
         </li>
     </ul>
 </div>

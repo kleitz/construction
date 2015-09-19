@@ -4,26 +4,22 @@
     <div class="col-md-12">
   <ul class="nav nav-tabs">
       <!-- <li class="active"><a data-toggle="tab" href="#menu1">Material Report</a></li> -->
-    <li><a data-toggle="tab" href="#menu2">Detailed Summary</a></li>
-    <!--  <li><a data-toggle="tab" href="#menu3">Construction Project</a></li>
-        <li><a data-toggle="tab" href="#menu4">Evaluation</a></li>-->
-        <li><a data-toggle="tab" href="#menu5">User Log</a></li>
-  </ul>
+    <li><a data-toggle="tab" href="#menu2">Visual Monitoring</a></li>
+      <li><a data-toggle="tab" href="#menu3">Independent Monitoring</a></li>
+      <!--  <li><a data-toggle="tab" href="#menu4">Monitoring Report</a></li>-->
+          </ul>
 
   <div class="tab-content">
       <div id="menu2" class="tab-pane fade">
-      <?php $this->load->view('reports/projectsite_report') ?>
+      <?php $this->load->view('reports/visual_monitoring') ?>
       </div>
     <div id="menu3" class="tab-pane fade">
-      <?php $this->load->view('reports/list_project') ?>
+      <?php $this->load->view('reports/independent_monitoring') ?>
     </div>
     <div id="menu4" class="tab-pane fade">
-<?php $this->load->view('reports/evaluation_list') ?>
+<?php $this->load->view('reports/monitoring_report') ?>
     </div>
-    <div id="menu5" class="tab-pane fade">
-      <?php $this->load->view('reports/userlog') ?>
-    </div>
-  </div>
+      </div>
 </div>
 
 

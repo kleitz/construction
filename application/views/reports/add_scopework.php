@@ -1,22 +1,22 @@
 <div class="panel panel-default" style="margin:10px;box-shadow:0px 0px 20px gray;margin-top:20px">
-  <div class="panel-heading"><strong><h2>Add Material to Proposed Construction</h2></strong></div>
+  <div class="panel-heading"><strong><h2>Add category scope of work</h2></strong></div>
   <div class="panel-body">
     <div class="col-md-12">
       <?php echo $this->session->flashdata('message'); ?>
-      <form class="form-horizontal" action="index.html" method="post">
+      <form class="form-horizontal" action="/insert_add_scopework" method="post">
         <div class="form-group">
-            <label for="" class="col-sm-2 control-label">Item No.</label>
+            <label for="" class="col-sm-2 control-label">scope of work</label>
             <div class="col-sm-6">
-              <input type="text" name="name" value="" class="form-control">
+              <input type="text" name="scopework" value="" class="form-control">
             </div>
 
         </div>
-        <div class="form-group">
+          <div class="form-group">
           <label class="col-sm-6"></label>
           <div class="col-sm-2">
             <label for="">&nbsp;</label>
-                  <button type="button" class="btn btn-success" name="button">Save</button>
-                  <button type="button" class="btn btn-info" name="button">Cancel</button>
+                  <button type="submit" class="btn btn-success" name="button">Save</button>
+                  <a href="#" class="btn btn-info" name="button">Cancel</a>
           </div>
 
         </div>
@@ -33,27 +33,18 @@
 
      </thead>
        <tbody>
-            <tr>
-             <td>Excavation</td>
-             <td class="bordered">
-               <a  class="a-table label label-info" href="#">Edit&nbsp;&nbsp;<span class="glyphicon glyphicon-edit"></a>
-                 <a  class="a-table label label-danger" href="#">Delete&nbsp;&nbsp;<span class="glyphicon glyphicon-trash"></a>
-               </td>
-           </tr>
+         <?php foreach ($this->common->select_scopework() as $key => $value):
+           extract ($value);
+           ?>
            <tr>
-            <td>Embankment</td>
+            <td><?php echo $scopework ?></td>
             <td class="bordered">
               <a  class="a-table label label-info" href="#">Edit&nbsp;&nbsp;<span class="glyphicon glyphicon-edit"></a>
-                <a  class="a-table label label-danger" href="#">Delete&nbsp;&nbsp;<span class="glyphicon glyphicon-trash"></a>
+                <a  class="a-table label label-danger" href="/del_scope_work/<?php echo $id ?>">Delete&nbsp;&nbsp;<span class="glyphicon glyphicon-trash"></a>
               </td>
-           </tr>
-           <tr>
-            <td>Re-enforce Concrete</td>
-            <td class="bordered">
-              <a  class="a-table label label-info" href="#">Edit&nbsp;&nbsp;<span class="glyphicon glyphicon-edit"></a>
-                <a  class="a-table label label-danger" href="#">Delete&nbsp;&nbsp;<span class="glyphicon glyphicon-trash"></a>
-              </td>
-           </tr>
+          </tr>
+         <?php endforeach; ?>
+
 
        </tbody>
       </table>
