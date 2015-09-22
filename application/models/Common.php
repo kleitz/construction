@@ -91,13 +91,54 @@ class Common extends CI_Model
   }
   function get_all_mat($type, $id, $scopework)
   {
-    return $this->db->query("SELECT unit, description,unit_cost  FROM material
+    return $this->db->query("SELECT tquantity,unit, description,unit_cost, quantity  FROM material
                             WHERE type = '$type'
                             AND project = '$id'
-                            And scope_of_work = '$scopeofwork'
+                            And scope_of_work = '$scopework'
                             ")->result_array();
   }
+ 
+  function del_project_sites($id)
+  {
+    $this->db->where('id',$id);
+    $this->db->delete('project') or die("cannot");
+
+    $this->db->where('project',$id);
+    $this->db->delete('material') or die("cannot");
+  }
+
+function get_allmaterial($id)
+{
+return  $this->db->query("SELECT *,sum(unit_cost) as unitcost FROM material,scopework WHERE scope_id=$id AND scopework.id = material.scope_of_work")->result_array();
+
 }
+function insert_account($data)
+{
+  $this->db->insert('account',$data);
+}
+function select_allaccount()
+{
+    return $this->db->get('account')->result_array();
+}
+function del_account($id)
+{
+  $this->db->where('id',$id);
+    $this->db->delete('account') or die("cannot");
+}
+function del_projectsite($id)
+{
+   $this->db->where('id',$id);
+    $this->db->delete('project') or die("cannot");
+}
+function userpass($username,$password)
+{
+return  $this->db->query("SELECT * FROM account WHERE username='$username' AND password='$password'")->row_array();
 
-
+}
+function select_project1($id)
+{
+      $this->db->where('id', $id);
+      $this->db->delete('scopework');
+}
+}
  ?>

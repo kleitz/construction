@@ -9,15 +9,9 @@
             <a href=""></a>
         </li>
 
-        <li>
-            <a href="/project-site">Construction</a>
-        </li>
-
+        
         <li>
             <a href="/report">Reports</a>
-        </li>
-        <li>
-            <a href="/add_scopework">Add Scope of Work</a>
         </li>
         <li>
             <a href="/logout">Logout</a>
@@ -25,5 +19,20 @@
         <li>
             <a href="/bago">Bag-o</a>
         </li>
+
+        <?php if ($this->session->userdata('type') == 1): ?>
+        <li>
+            <a href="/project-site">Construction</a>
+        </li>
+
+        <li>
+            <a href="/registration">Registration</a>
+        </li>
+        <li>
+            <a href="/add_scopework">Add Scope of Work</a>
+        </li>
+
+        <?php endif ?>
+       
     </ul>
 </div>

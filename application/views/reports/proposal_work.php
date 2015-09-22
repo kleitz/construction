@@ -12,28 +12,31 @@
        <tr>
          <th class="table_color">Description</th>
          <th class="table_color">QTY</th>
+         <th class="table_color">Unit</th>
          <th class="table_color">Unit Cost</th>
-         <th class="table_color">Indirect Cost</th>
-         <th class="table_color">No of Days to be Finished</th>
-         <th class="table_color">Accomplishment %</th>
-         <th class="table_color">Remarks</th>
+         <th class="table_color">Amount</th>
+         <th class="table_color">Total Amount</th>
 
        </tr>
 
-         <?php for ($i=1; $i <= 1; $i++) { ?>
-           <tr>
-             <td class="bordered">Excavation</td>
-             <td class="bordered">159.99</td>
-             <td class="bordered">595.69</td>
-             <td class="bordered">41,800</td>
-             <td class="bordered">4</td>
-             <td class="bordered">100%</td>
-             <td class="bordered"></td>
+         <?php 
+  foreach ($this->common->get_allmaterial($id) as $key => $va):
+                extract($va)
+             ?>
+             <tr>
+                <td class="bordered"><?php echo $scopework ?></td>
+                <td class="bordered"><?php echo $tquantity ?></td>
+                <td class="bordered"><?php echo $unit ?></td>
+                <td class="bordered"><?php echo ($unitcost/$tquantity) ?></td>
+                <td class="bordered"><?php echo $unitcost ?></td>
+                <td class="bordered"><?php echo $unitcost ?></td>
+                <td class="bordered"></td>
+                </td>
+              </tr>
 
-           </tr>
+           <?php endforeach; ?>
 
-
-       <?php  } ?>
+                 
 
       </table>
       <br />

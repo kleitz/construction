@@ -14,7 +14,7 @@
      </thead>
        <tbody>
 
-             <?php foreach ($this->common->select_project() as $key => $value):
+             <?php foreach ($this->common->select_project1($this->session->userdata('id')) as $key => $value):
                extract ($value)?>
                   <tr>
                <td class="bordered"><?php echo $project_site ?></td>

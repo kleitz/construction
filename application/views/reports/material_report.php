@@ -7,7 +7,10 @@
     <li><a data-toggle="tab" href="#menu2">Detailed Summary</a></li>
     <!--  <li><a data-toggle="tab" href="#menu3">Construction Project</a></li>
         <li><a data-toggle="tab" href="#menu4">Evaluation</a></li>-->
-        <li><a data-toggle="tab" href="#menu5">User Log</a></li>
+        <?php if ($this->session->userdata('type') == 1): ?>
+          <li><a data-toggle="tab" href="#menu5">User Log</a></li>  
+        <?php endif ?>
+        
   </ul>
 
   <div class="tab-content">

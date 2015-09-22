@@ -17,14 +17,10 @@
       <?php $this->load->view('reports/independent_monitoring') ?>
     </div>
     <div id="menu4" class="tab-pane fade">
-<?php $this->load->view('reports/monitoring_report') ?>
+      <?php $this->load->view('reports/monitoring_report') ?>
     </div>
       </div>
 </div>
-
-
-
-
 
       <br />
     </div>

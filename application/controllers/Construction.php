@@ -43,11 +43,12 @@
         $this->load->view('reports/material_report');
         $this->load->view('template/footer.php');
       }
-      function proposal_work()
+      function proposal_work($id)
       {
+        $data['id']=$id;
         $this->load->view('template/header');
         $this->load->view('template/navigation2');
-        $this->load->view('reports/proposal_work');
+        $this->load->view('reports/proposal_work',$data);
         $this->load->view('template/footer.php');
       }
 
@@ -90,7 +91,7 @@
         if ( ! $this->upload->do_upload('files'))
         {
           $this->session->set_flashdata('message', $this->succesmessage() . $this->upload->display_errors().'</div>' );
-          $data=array(
+          $data=array('name'=>$this->input->post('name'),
                       'project_site'=>$this->input->post('project_site'),
                       'location'=>$this->input->post('location'),
                       'cdtc'=>$this->input->post('cdtc'),
@@ -101,7 +102,7 @@
         }
         else
         {
-          $data=array(
+          $data=array('name'=>$this->input->post('name'),
                       'project_site'=>$this->input->post('project_site'),
                       'location'=>$this->input->post('location'),
                       'cdtc'=>$this->input->post('cdtc'),
@@ -120,6 +121,7 @@
                       'scope_of_work'=>$this->input->post('scopeofwork'),
                       'description'=>$this->input->post('description'),
                       'unit'=>$this->input->post('unit'),
+                      'tquantity'=>$this->input->post('tquantity'),
                       'quantity'=>$this->input->post('quantity'),
                       'unit_cost'=>$this->input->post('unitcost'),
                       'days'=>$this->input->post('days'),
@@ -201,5 +203,47 @@
               $name = $x;
               force_download($name, $data);
           }
+          function proj_sit($id)
+          {
+            $this->common->del_project_sites($id);
+            redirect('/project-site');
+          }
+          function registration()
+          {
+            $this->load->view('template/header');
+        $this->load->view('template/navigation2');
+        $this->load->view('pages/registration');
+        $this->load->view('template/footer.php');
+          }
+          function insert_account()
+          {
+if ($this->input->post('password') == $this->input->post('cpassword')){
+   $data=array( 'name'=>$this->input->post('name'),
+    'type'=>$this->input->post('type'),
+                          'username'=>$this->input->post('username'),
+                          'password'=>$this->input->post('password')
 
+                    );
+        $this->common->insert_account($data);
+        $this->session->set_flashdata('message', $this->succesmessage() . 'Account Added</div>');
+       
+} else {
+    $this->session->set_flashdata('message', $this->failedmessage() . 'Password not Match</div>');
+      
+}
+ redirect('/registration');
+}
+
+
+                function del_account($id)
+          {
+            $this->common->del_account($id);
+            redirect('/registration');
+          }
+          function del_projectsite($id)
+          {
+
+            $this->common->del_projectsite($id);
+            redirect('/project-site');
+          }
   }

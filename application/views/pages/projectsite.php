@@ -11,6 +11,18 @@
             </div>
         </div>
         <div class="form-group">
+            <label for="" class="col-sm-2 control-label">Name</label>
+           <div class="col-sm-6">
+              <select class="form-control" name="name">
+                <?php foreach ($this->common->select_allaccount() as $key => $value):
+                  extract($value);
+                  ?>
+                        <option <?php echo $id ?>><?php echo $name ?></option>
+                <?php endforeach; ?>
+              </select>
+            </div>
+        </div>
+        <div class="form-group">
             <label for="" class="col-sm-2 control-label">Location</label>
             <div class="col-sm-6">
               <input type="text" name="location" value="" class="form-control" required>
@@ -25,7 +37,7 @@
         <div class="form-group">
             <label for="" class="col-sm-2 control-label">Bid Price</label>
             <div class="col-sm-6">
-              <input type="number" name="bid_price" value="" class="form-control" required>
+              <input type="number" name="bid_price" step="any"value="" class="form-control" required>
             </div>
         </div>
         <div class="form-group">
@@ -51,6 +63,7 @@
        <thead>
 
        <tr>
+          <th class="table_color">Name</th>
          <th class="table_color">Project Site</th>
          <th class="table_color">Location</th>
          <th class="table_color">Calendar Days to Complete</th>
@@ -64,6 +77,7 @@
            extract($value);
            ?>
            <tr>
+            <td class="bordered"><?php echo $name ?></td>
              <td class="bordered"><?php echo $project_site ?></td>
              <td class="bordered"><?php echo $location ?></td>
              <td class="bordered"><?php echo $cdtc ?></td>
@@ -71,7 +85,7 @@
              <td class="bordered">
                   <a  class="a-table label label-info" href="/add-material/<?php echo $id ?>">view Summary&nbsp;&nbsp;<span class="glyphicon glyphicon-edit"></a>
                   <a  class="a-table label label-info" href="/down_pert/<?php echo $id ?>">Pert-Cpm&nbsp;&nbsp;<span class="glyphicon glyphicon-file"></a>
-                  <a  class="a-table label label-danger" href="/del_project_site/<?php echo $id ?>">Delete&nbsp;&nbsp;<span class="glyphicon glyphicon-trash"></a>
+                  <a  class="a-table label label-danger" href="/del_projectsite/<?php echo $id ?>">Delete&nbsp;&nbsp;<span class="glyphicon glyphicon-trash"></a>
                   </td>
            </tr>
          <?php endforeach; ?>

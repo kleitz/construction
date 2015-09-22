@@ -5,36 +5,55 @@
       <?php echo $this->session->flashdata('message'); ?>
       <form class="form-horizontal" action="/insert_visual_monitoring" method="post">
         <div class="form-group">
-            <label for="" class="col-sm-2 control-label">Project</label>
-            <div class="col-sm-6">
-              <input type="text" name="project" value="" class="form-control">
+            <label for="" class="col-sm-4 control-label">Project</label>
+            <div class="col-sm-4">
+              <select class="form-control" name="scopeofwork">
+                <?php foreach ($this->common->select_scopework($id) as $key => $value):
+                  extract($value);
+                  ?>
+                        <option value=<?php echo $id ?>><?php echo $scopework ?></option>
+                <?php endforeach; ?>
+              </select>
             </div>
+            
         </div>
         <div class="form-group">
-            <label for="" class="col-sm-2 control-label">Scope of Work</label>
-            <div class="col-sm-6">
-              <input type="text" name="scope_of_work" value="" class="form-control">
+            <label for="" class="col-sm-4 control-label">Scope of Work</label>
+            <div class="col-sm-4">
+              <select class="form-control" name="scopeofwork">
+                <?php foreach ($this->common->select_scopework() as $key => $value):
+                  extract($value);
+                  ?>
+                        <option value=<?php echo $id ?>><?php echo $scopework ?></option>
+                <?php endforeach; ?>
+              </select>
+
             </div>
+            
         </div>
         <div class="form-group">
-            <label for="" class="col-sm-2 control-label">no. of dayes completed</label>
-            <div class="col-sm-6">
+            <label for="" class="col-sm-4 control-label">no. of days completed</label>
+            <div class="col-sm-4">
               <input type="number" name="days" value="" class="form-control">
             </div>
         </div>
             <div class="form-group">
-            <label for="" class="col-sm-2 control-label">Upload Blueprint</label>
-            <div class="col-sm-6">
+            <label for="" class="col-sm-4 control-label">Upload Blueprint</label>
+            <div class="col-sm-4">
               <button class="btn btn-success"  type="button" name="button">Browse...</button>
+              <div class="pull-right">
+                  <button type="submit" class="btn btn-success" name="button">Save</button>
+                  <button type="#" class="btn btn-info" name="button">Cancel</button>
+              </div>
+              
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="col-md-12">
           <label class="col-sm-6"></label>
-          <div class="col-sm-2">
+          <div class="col-sm-4">
             <label for="">&nbsp;</label>
-                  <button type="submit" class="btn btn-success" name="button">Save</button>
-                  <button type="#" class="btn btn-info" name="button">Cancel</button>
+                
           </div>
 
         </div>

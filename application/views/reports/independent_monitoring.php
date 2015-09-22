@@ -5,35 +5,34 @@
       <?php echo $this->session->flashdata('message'); ?>
       <form class="form-horizontal" action="/insert_independent_monitoring" method="post">
         <div class="form-group">
-            <label for="" class="col-sm-2 control-label">Project</label>
-            <div class="col-sm-6">
+            <label for="" class="col-sm-4 control-label">Project</label>
+            <div class="col-sm-4">
               <input type="text" name="project" value="" class="form-control">
             </div>
         </div>
         <div class="form-group">
-            <label for="" class="col-sm-2 control-label">Scope of Work</label>
-            <div class="col-sm-6">
+            <label for="" class="col-sm-4 control-label">Scope of Work</label>
+            <div class="col-sm-4">
               <input type="text" name="scope_of_work" value="" class="form-control">
             </div>
         </div>
         <div class="form-group">
-            <label for="" class="col-sm-2 control-label">Duration Time</label>
-            <div class="col-sm-6">
+            <label for="" class="col-sm-4 control-label">Duration Time</label>
+            <div class="col-sm-4">
               <input type="number" name="duration_time" value="" class="form-control">
             </div>
         </div>
         <div class="form-group">
-            <label for="" class="col-sm-2 control-label">Possible Action</label>
-            <div class="col-sm-6">
+            <label for="" class="col-sm-4 control-label">Possible Action</label>
+            <div class="col-sm-4">
               <input type="number" name="possible_action" value="" class="form-control">
             </div>
         </div>
-                <div class="form-group">
-          <label class="col-sm-6"></label>
-          <div class="col-sm-2">
-            <label for="">&nbsp;</label>
-                  <button type="submit" class="btn btn-success" name="button">Save</button>
-                  <button type="#" class="btn btn-info" name="button">Cancel</button>
+        <div class="form-group">
+          <label class="col-sm-4"></label>
+          <div class="col-sm-4">
+                <button type="submit" class="btn btn-success" name="button">Save</button>
+                <button type="#" class="btn btn-info" name="button">Cancel</button>
           </div>
 
         </div>
