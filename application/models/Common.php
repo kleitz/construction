@@ -97,7 +97,7 @@ class Common extends CI_Model
                             And scope_of_work = '$scopework'
                             ")->result_array();
   }
- 
+
   function del_project_sites($id)
   {
     $this->db->where('id',$id);
@@ -139,6 +139,10 @@ function select_project1($id)
 {
       $this->db->where('id', $id);
       $this->db->delete('scopework');
+}
+function checkrebase()
+{
+    echo "rebase";
 }
 }
  ?>
