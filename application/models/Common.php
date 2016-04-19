@@ -149,7 +149,10 @@ function trial(){
 }
 function x()
 {
-    echo "x";
+    echo "commit 1";
+}
+function b(){
+    echo "commit 2";
 }
 }
  ?>
