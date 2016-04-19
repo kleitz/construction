@@ -144,5 +144,8 @@ function checkrebase()
 {
     echo "rebase";
 }
+function trial(){
+    echo "tral";
+}
 }
  ?>
