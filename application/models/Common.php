@@ -147,9 +147,10 @@ function checkrebase()
 function trial(){
     echo "tral";
 }
-function y()
+function x()
 {
-    echo "y";
+    echo "x";
+>>>>>>> Added Something
 }
 }
  ?>
