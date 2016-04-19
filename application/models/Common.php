@@ -150,7 +150,6 @@ function trial(){
 function x()
 {
     echo "x";
->>>>>>> Added Something
 }
 }
  ?>
