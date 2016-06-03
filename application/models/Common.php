@@ -153,6 +153,9 @@ function x()
 }
 function b(){
     echo "commit 2";
+function y()
+{
+    echo "y";
 }
 }
  ?>
